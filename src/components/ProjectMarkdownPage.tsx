@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
-import { useSkillMarkdown } from "../hooks/useSkillsMarkdown";
+import { useMarkdown } from "../hooks/useSkillsMarkdown";
 
 const ProjectMarkdownPage: React.FC = () => {
   const { projetName } = useParams<{ projetName: string }>();
@@ -9,7 +9,7 @@ const ProjectMarkdownPage: React.FC = () => {
   
   const skillSlug = projetName ?? null;
 
-  const { content, isLoading, error } = useSkillMarkdown(skillSlug);
+  const { content, isLoading, error } = useMarkdown(skillSlug);
 
   return (
     <main className="project-markdown-page">

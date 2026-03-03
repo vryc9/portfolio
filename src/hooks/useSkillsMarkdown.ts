@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 
-interface UseSkillMarkdownResult {
+interface UseMarkdownResult {
   content: string;
   isLoading: boolean;
   error: string | null;
 }
 
-export const useSkillMarkdown = (
-  skillSlug: string | null
-): UseSkillMarkdownResult => {
-  const [content, setContent] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+export const useMarkdown = (
+  slug: string | null
+): UseMarkdownResult => {
+  const [content, setContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!skillSlug) {
+    if (!slug) {
       setContent("");
-      setError("Compétence invalide.");
+      setError("Fichier invalide.");
       return;
     }
 
@@ -27,12 +27,13 @@ export const useSkillMarkdown = (
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(`/${skillSlug}.md`, {
-          signal: controller.signal,
-        });
+        const response = await fetch(
+          `${import.meta.env.BASE_URL}${slug}.md`,
+          { signal: controller.signal }
+        );
 
         if (!response.ok) {
-          throw new Error("Impossible de charger le contenu de la compétence.");
+          throw new Error("Impossible de charger le contenu.");
         }
 
         const markdown = await response.text();
@@ -55,7 +56,7 @@ export const useSkillMarkdown = (
     void loadMarkdown();
 
     return () => controller.abort();
-  }, [skillSlug]);
+  }, [slug]);
 
   return { content, isLoading, error };
 };

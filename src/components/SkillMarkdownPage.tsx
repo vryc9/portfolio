@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
-import { useSkillMarkdown } from "../hooks/useSkillsMarkdown";
+import { useMarkdown } from "../hooks/useSkillsMarkdown";
 
 const formatSkillTitle = (slug: string): string => {
   return slug
@@ -14,7 +14,7 @@ const SkillMarkdownPage: React.FC = () => {
   const { skillName } = useParams<{ skillName: string }>();
   const skillSlug = skillName ?? null;
 
-  const { content, isLoading, error } = useSkillMarkdown(skillSlug);
+  const { content, isLoading, error } = useMarkdown(skillSlug);
 
   return (
     <main className="project-markdown-page">
