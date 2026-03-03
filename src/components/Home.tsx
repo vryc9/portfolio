@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { SectionId } from '../types'
 import ParticleCanvas from './ParticleCanvas'
 import CustomCursor from './CustomCursor'
