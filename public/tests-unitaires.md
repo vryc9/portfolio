@@ -1,0 +1,13 @@
+# Définition 
+Un test unitaire est un procédé qui permet de tester de manière isolée une partie précise du code, généralement une fonction, une méthode ou une classe. Ce type de test est particulièrement utile pour la correction de bugs, la vérification du comportement du code de façon isolée, ainsi que pour améliorer la maintenabilité, notamment sur des gros projets.
+En plus des tests unitaires, il existe d’autres types de tests, comme les tests d’intégration, qui vérifient les interactions entre plusieurs modules, ou encore les tests de bout en bout (End-to-End / E2E), qui simulent le parcours complet d’un utilisateur au sein d’une application.
+Dans un test unitaire, on fournit généralement des valeurs en entrée, puis on vérifie que les valeurs en sortie correspondent au comportement attendu.
+
+# Réalisations
+Sur chacun des projets que j’ai développés en entreprise, j’ai utilisé la méthodologie TDD (Test Driven Development). Celle-ci consiste à écrire les tests automatisés avant d’implémenter le code fonctionnel. J’ai également mis en place la structure Given / When / Then, issue du langage Gherkin, afin d’améliorer la lisibilité et la compréhension des tests.
+Tout au long de mon alternance, j’ai appliqué ces principes sur plusieurs projets. Par exemple, lors de l’élaboration d’un outil permettant la gestion automatisée de scripts SQL, j’ai mis en place un service dédié à l’extraction de données issues d’un webhook GitLab. J’ai également travaillé sur la création d’un comparateur XML, pour lequel j’ai développé un service capable d’extraire et de comparer des données provenant de plusieurs classes.
+Afin de tester ces services, j’ai écrit des tests unitaires à l’aide du framework JUnit 5. Chaque méthode de test est annotée avec @Test, ce qui permet leur exécution automatique. Pour simuler les dépendances et les données, j’ai utilisé Mockito, un framework permettant la création et la manipulation de mocks.
+Pour chaque test, j’ai préparé un jeu de données simulées ainsi que les résultats attendus, puis j’ai vérifié le bon comportement des méthodes testées à l’aide d’assertions fournies par JUnit.
+
+# Autocritique et évolutions 
+J’ai commencé à écrire des tests unitaires durant mon cursus scolaire. Petit à petit, je suis monté en compétences et, durant mon alternance, j’ai consolidé mes acquis et vu des concepts un peu plus avancés. Savoir écrire des tests unitaires est très important pour un développeur, car cela permet de faciliter la détection de bugs et surtout d'améliorer la clarté et la maintenabilité du code. Aujourd’hui, je possède un niveau qui me permet d’être autonome. Mais il me reste encore une marge d’apprentissage, notamment avec les tests end-to-end, que je n’ai pas beaucoup pratiqué. 
