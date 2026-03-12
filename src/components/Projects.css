@@ -95,6 +95,101 @@
   color: var(--accent-cyan);
 }
 
+/* Base tag */
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 999px; /* plus moderne */
+  user-select: none;    /* empêche la sélection du texte */
+  -webkit-user-select: none;
+  text-decoration: none;
+}
+
+.tag--tech {
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.28);
+  color: var(--accent-cyan);
+}
+
+.tag--soft {
+  background: rgba(168, 85, 247, 0.12);       
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  color: var(--accent-purple);
+}
+
+.project-actions {
+  margin: 18px 0 16px;
+}
+
+.project-details-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  background: rgba(0, 229, 255, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.project-details-link:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.tag::selection {
+  background: transparent;
+}
+
+.tag::-moz-selection {
+  background: transparent;
+}
+
+.tag-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.18);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.project-more {
+  flex-shrink: 0;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.project-more:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 229, 255, 0.28);
+  background: rgba(0, 229, 255, 0.08);
+}
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

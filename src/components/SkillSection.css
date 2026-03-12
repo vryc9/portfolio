@@ -1,0 +1,113 @@
+.skills-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.skills-col__head {
+  margin-bottom: 14px;
+}
+
+.skills-col__title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.skills-col__subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.skills-list {
+  display: grid;
+  gap: 12px;
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+
+  padding: 14px 16px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.skill-card:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 5px rgba(0, 229, 255, 0.12),
+    0 16px 40px rgba(0, 0, 0, 0.20);
+}
+
+.skill-card__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.skill-card__name {
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skill-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.skill-card__chev {
+  color: var(--text-secondary);
+  font-family: "JetBrains Mono", monospace;
+}
+
+.skill-card--tech:hover {
+  border-color: rgba(0, 229, 255, 0.28);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.22),
+    0 0 28px rgba(0, 229, 255, 0.14);
+}
+
+.skill-card--soft:hover {
+  border-color: rgba(168, 85, 247, 0.28);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.22),
+    0 0 28px rgba(168, 85, 247, 0.12);
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import type { Project } from "../types";
 import "./Projects.css";
 import { slugify } from "../utils/slugify";
@@ -53,54 +54,83 @@ export const projects: Project[] = [
     title: "DH",
     icon: "()",
     description: "lorem",
-    tags: ["Angular", "Java", "Ngrx", "Compréhension du besoin"],
+    tags: ["Angular", "Java", "NgRx", "Compréhension du besoin"],
   },
 ];
 
+const TECH_SKILLS = new Set<string>([
+  "Angular",
+  "Java",
+  "NgRx",
+  "RxJS",
+  "Git",
+  "Tests unitaires",
+  "Test unitaire",
+]);
+
+const isTechSkill = (tag: string): boolean => TECH_SKILLS.has(tag);
+
 const Projects: React.FC = () => {
+  const navigate = useNavigate();
+
+  const goToProject = useCallback(
+    (project: Project) => {
+      navigate(`/projects/${slugify(project.title)}`);
+    },
+    [navigate],
+  );
+
+  const onCardKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLElement>, project: Project) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        goToProject(project);
+      }
+    },
+    [goToProject],
+  );
+
   return (
     <section id="projects">
       <h2 className="section-title">Projets récents</h2>
 
       <div className="projects-grid">
-        {projects.map((project) => {
-          return (
-            <Link
-              key={project.id}
-              to={`/projects/${slugify(project.title)}`}
-              className="project-card-link"
-              aria-label={`Voir le détail du projet ${project.title}`}
-            >
-              <article className="project-card">
-                <div className="project-header">
-                  <div>
-                    <h3 className="project-title">{project.title}</h3>
-                  </div>
-                  <div className="project-icon" aria-hidden="true">
-                    {project.icon}
-                  </div>
-                </div>
+        {projects.map((project) => (
+          <article
+            key={project.id}
+            className="project-card"
+            role="link"
+            tabIndex={0}
+            aria-label={`Ouvrir le projet ${project.title}`}
+            onClick={() => goToProject(project)}
+            onKeyDown={(e) => onCardKeyDown(e, project)}
+          >
+            <div className="project-header">
+              <div>
+                <h3 className="project-title">{project.title}</h3>
+              </div>
+              <div className="project-icon" aria-hidden="true">
+                {project.icon}
+              </div>
+            </div>
 
-                <p className="project-description">{project.description}</p>
+            <p className="project-description">{project.description}</p>
 
-                <div className="project-tags">
-                  {project.tags.map((tag, index) => {
-                    const skillSlug = slugify(tag);
-                    return (
-                      <Link
-                        key={`${project.id}-${tag}-${index}`}
-                        to={`/skills/${skillSlug}`}
-                        className="tag tag-link"
-                      >
-                        {tag}
-                      </Link>
-                    );
-                  })}
-                </div>
-              </article>
-            </Link>
-          );
-        })}
+            <div className="project-tags">
+              {project.tags.map((tag, index) => {
+                const variant = isTechSkill(tag) ? "tag--tech" : "tag--soft";
+                return (
+                  <span
+                    key={`${project.id}-${tag}-${index}`}
+                    className={`tag ${variant}`}
+                  >
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
