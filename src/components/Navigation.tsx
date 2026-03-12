@@ -1,5 +1,5 @@
 import type { SectionId } from "../types";
-import { FolderKanban, House, Mail } from "lucide-react";
+import { FolderKanban, GraduationCap, House, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import "./Navigation.css";
 
@@ -16,6 +16,7 @@ interface NavigationItem {
 
 const NAV_ITEMS: NavigationItem[] = [
   { id: "hero", label: "Accueil", icon: House },
+  { id: "timeline", label: "Parcours", icon: GraduationCap },
   { id: "projects", label: "Projets", icon: FolderKanban },
   // { id: "skills", label: "Stack", icon: Layers3 },
   { id: "contact", label: "Contact", icon: Mail },
