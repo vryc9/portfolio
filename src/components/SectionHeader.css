@@ -1,0 +1,59 @@
+.sh--center {
+  text-align: center;
+}
+
+.sh__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sh--center .sh__eyebrow {
+  justify-content: center;
+}
+
+.sh__eyebrowLine {
+  flex: 0 0 32px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 229, 255, 0.5));
+}
+
+.sh__eyebrowLine--right {
+  background: linear-gradient(to left, transparent, rgba(0, 229, 255, 0.5));
+}
+
+
+
+.sh__eyebrowText {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-cyan, #00e5ff);
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.sh__title {
+  perspective: 600px;
+  transform-style: preserve-3d;
+  min-height: 1.25em;
+}
+
+.sh__char {
+  display: inline-block;
+}
+
+.sh__subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--text-secondary, rgba(255, 255, 255, 0.55));
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.sh--center .sh__subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
