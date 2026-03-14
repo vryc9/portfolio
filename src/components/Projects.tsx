@@ -2,62 +2,10 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Project } from "../types";
 import "./Projects.css";
-import { slugify } from "../types/utils/slugify";
 import SectionHeader from "./SectionHeader";
+import { projects } from "../data/project";
 
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "Gestion de script SQL",
-    icon: "{}",
-    description:
-      "Application permettant la gestion de script SQL avec une automatisation pour la récupération des scripts directement depuis Gitlab ",
-    tags: [
-      "Angular",
-      "Java",
-      "Anticipation",
-      "Git",
-      "Tests unitaires",
-      "Compréhension du besoin",
-    ],
-  },
-  {
-    id: 2,
-    title: "Comparateur XML",
-    icon: "[]",
-    description: "Application permettant la comparaison de deux fichier XML",
-    tags: [
-      "Angular",
-      "Java",
-      "Gestion de projet",
-      "Test unitaire",
-      "Anticipation",
-      "Autonomie",
-      "Gestion de projet",
-    ],
-  },
-  {
-    id: 3,
-    title: "Planéo",
-    icon: "<>",
-    description: "lorem",
-    tags: ["Angular", "Java", "NgRx", "Autonomie"],
-  },
-  {
-    id: 4,
-    title: "BtoS",
-    icon: "()",
-    description: "lorem",
-    tags: ["Anticipation", "Communication orale", "Autonomie"],
-  },
-  {
-    id: 5,
-    title: "DH",
-    icon: "()",
-    description: "lorem",
-    tags: ["Angular", "Java", "NgRx", "Compréhension du besoin"],
-  },
-];
+
 
 const TECH_SKILLS = new Set<string>([
   "Angular",
@@ -69,14 +17,14 @@ const TECH_SKILLS = new Set<string>([
   "Test unitaire",
 ]);
 
-const isTechSkill = (tag: string): boolean => TECH_SKILLS.has(tag);
+export const isTechSkill = (tag: string): boolean => TECH_SKILLS.has(tag);
 
 const Projects: React.FC = () => {
   const navigate = useNavigate();
 
   const goToProject = useCallback(
-    (project: Project) => {
-      navigate(`/projects/${slugify(project.title)}`);
+    ({id}: Project) => {
+      navigate(`/projects/${id}`);
     },
     [navigate],
   );

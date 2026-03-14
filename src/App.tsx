@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter basename='/portfolio'>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects/:projetName" element={<ProjectMarkdownPage />} />
+        <Route path="/projects/:id" element={<ProjectMarkdownPage />} />
         <Route path="/skills/:skillName" element={<SkillMarkdownPage />} />
       </Routes>
     </BrowserRouter>
