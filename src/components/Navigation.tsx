@@ -1,5 +1,5 @@
 import type { SectionId } from "../types";
-import { FolderKanban, GraduationCap, House, Layers3, Mail } from "lucide-react";
+import { FolderKanban, GraduationCap, House, Layers3, Mail, PersonStanding } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import "./Navigation.css";
 
@@ -19,6 +19,7 @@ const NAV_ITEMS: NavigationItem[] = [
   { id: "timeline", label: "Parcours", icon: GraduationCap },
   { id: "projects", label: "Projets", icon: FolderKanban },
   { id: "skills", label: "Compétence", icon: Layers3 },
+  { id: "about", label: "Ma présentation", icon: PersonStanding },
   { id: "contact", label: "Contact", icon: Mail },
 ];
 

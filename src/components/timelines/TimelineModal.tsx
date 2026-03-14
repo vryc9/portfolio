@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import type { TimelineEntry } from "../../data/timeline";
-import { slugify } from "../../utils/slugify";
+import { slugify } from "../../types/utils/slugify";
 import "./Timeline.css";
 
 interface TimelineModalProps {

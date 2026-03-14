@@ -28,4 +28,4 @@ export interface Position {
   y: number;
 }
 
-export type SectionId = 'hero' | "timeline" | 'projects' | 'skills' | 'contact';
+export type SectionId = 'hero' | "timeline" | 'projects' | 'skills' | 'contact' | 'about';

@@ -9,6 +9,7 @@ import Projects from './Projects'
 import Contact from './Contact'
 import Timeline from './timelines/Timeline'
 import SkillsSection from './SkillSection'
+import About from './About'
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState<SectionId>('hero')
@@ -24,7 +25,7 @@ const Home = () => {
          <Timeline />
         <Projects />
         <SkillsSection />
-        {/* <Skills /> */}
+        <About />
         <Contact />
       </div>
     </> 
