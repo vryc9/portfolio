@@ -111,3 +111,93 @@
   color: inherit;
   cursor: pointer !important;
 }
+
+
+/* ====== SKILL — PROJETS ASSOCIÉS ====== */
+.skill-projects {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.skill-projects__header {
+  margin-bottom: 20px;
+}
+
+.skill-projects__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-cyan, #00e5ff);
+  opacity: 0.75;
+}
+
+.skill-projects__line {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 229, 255, 0.5));
+}
+
+.skill-projects__line--right {
+  background: linear-gradient(to left, transparent, rgba(0, 229, 255, 0.5));
+}
+
+.skill-projects__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-projects__card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer !important;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-projects__card:hover {
+  background: rgba(0, 229, 255, 0.06);
+  border-color: rgba(0, 229, 255, 0.18);
+  transform: translateX(4px);
+}
+
+.skill-projects__cardIcon {
+  font-size: 14px;
+  color: var(--accent-cyan, #00e5ff);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.skill-projects__cardTitle {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.skill-projects__cardArrow {
+  font-size: 16px;
+  color: var(--accent-cyan, #00e5ff);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.skill-projects__card:hover .skill-projects__cardArrow {
+  opacity: 0.7;
+  transform: translateX(0);
+}

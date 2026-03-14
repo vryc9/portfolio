@@ -1,7 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
+import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
+import { projects } from "../data/project";
+import { Project } from "../types";
+import { slugify } from "../types/utils/slugify";
 
 const formatSkillTitle = (slug: string): string => {
   return slug
@@ -12,9 +16,19 @@ const formatSkillTitle = (slug: string): string => {
 
 const SkillMarkdownPage: React.FC = () => {
   const { skillName } = useParams<{ skillName: string }>();
-  const skillSlug = skillName ?? null;
 
-  const { content, isLoading, error } = useMarkdown(skillSlug);
+  const skillTitle: string = useMemo<string>(
+    () => (skillName ? formatSkillTitle(skillName) : ""),
+    [skillName],
+  );
+
+  const { content, isLoading, error } = useMarkdown(skillName ?? "");
+  const relatedProjects: Project[] = useMemo<Project[]>(
+    () => projects.filter(({ tags }) => tags.some((tag) =>  slugify(tag) === skillName)),
+    [skillName],
+  );
+
+  if (!skillName) return <Navigate to="/" replace />;
 
   return (
     <main className="project-markdown-page">
@@ -23,8 +37,7 @@ const SkillMarkdownPage: React.FC = () => {
           <Link to="/" className="back-link">
             ← Retour à l'accueil
           </Link>
-
-          {skillSlug && <h1>{formatSkillTitle(skillSlug)}</h1>}
+          <h1>{skillTitle}</h1>
         </header>
 
         {isLoading && <p>Chargement du contenu...</p>}
@@ -39,6 +52,35 @@ const SkillMarkdownPage: React.FC = () => {
           <article className="markdown-content">
             <ReactMarkdown>{content}</ReactMarkdown>
           </article>
+        )}
+
+        {relatedProjects.length > 0 && (
+          <div className="skill-projects">
+            <div className="skill-projects__header">
+              <span className="skill-projects__eyebrow">
+                <span className="skill-projects__line" />
+                projets associés
+                <span className="skill-projects__line skill-projects__line--right" />
+              </span>
+            </div>
+
+            <ul className="skill-projects__list">
+              {relatedProjects.map((project) => (
+                <li key={project.id}>
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="skill-projects__card"
+                  >
+                    <span className="skill-projects__cardIcon">◈</span>
+                    <span className="skill-projects__cardTitle">
+                      {project.title}
+                    </span>
+                    <span className="skill-projects__cardArrow">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </main>

@@ -25,10 +25,9 @@ export const projects: Project[] = [
             "Angular",
             "Java",
             "Gestion de projet",
-            "Test unitaire",
+            "Tests unitaires",
             "Anticipation",
             "Autonomie",
-            "Gestion de projet",
         ],
     },
     {
@@ -43,14 +42,14 @@ export const projects: Project[] = [
         title: "BtoS",
         icon: "()",
         description: "lorem",
-        tags: ["Anticipation", "Communication orale", "Autonomie"],
+        tags: ["Anticipation", "Communication orale", "Autonomie", "Gestion de projet"],
     },
     {
         id: 5,
         title: "DH",
         icon: "()",
         description: "lorem",
-        tags: ["Angular", "Java", "NgRx", "Compréhension du besoin"],
+        tags: ["Angular", "Java", "NgRx",'Git', "Compréhension du besoin", "Communication orale"],
     },
 ];
 
