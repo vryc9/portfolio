@@ -1,20 +1,20 @@
-import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import ProjectMarkdownPage from './components/ProjectMarkdownPage'
-import Home from './components/Home'
-import SkillMarkdownPage from './components/SkillMarkdownPage';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ProjectMarkdownPage from "./components/ProjectMarkdownPage";
+import Home from "./components/Home";
+import SkillMarkdownPage from "./components/SkillMarkdownPage";
+import { APP_BASENAME, APP_ROUTES } from "./constants/routes";
 
 function App() {
   return (
-    <BrowserRouter basename='/portfolio'>
+    <BrowserRouter basename={APP_BASENAME}>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects/:id" element={<ProjectMarkdownPage />} />
-        <Route path="/skills/:skillName" element={<SkillMarkdownPage />} />
+        <Route path={APP_ROUTES.home} element={<Home />} />
+        <Route path={APP_ROUTES.projectDetails} element={<ProjectMarkdownPage />} />
+        <Route path={APP_ROUTES.skillDetails} element={<SkillMarkdownPage />} />
       </Routes>
     </BrowserRouter>
   );
-  
 }
 
-export default App
+export default App;

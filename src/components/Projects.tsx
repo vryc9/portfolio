@@ -4,35 +4,23 @@ import type { Project } from "../types";
 import "./Projects.css";
 import SectionHeader from "./SectionHeader";
 import { projects } from "../data/project";
-
-
-
-const TECH_SKILLS = new Set<string>([
-  "Angular",
-  "Java",
-  "NgRx",
-  "RxJS",
-  "Git",
-  "Tests unitaires",
-  "Test unitaire",
-]);
-
-export const isTechSkill = (tag: string): boolean => TECH_SKILLS.has(tag);
+import { projectPath } from "../constants/routes";
+import { isTechSkill } from "../utils/skills";
 
 const Projects: React.FC = () => {
   const navigate = useNavigate();
 
   const goToProject = useCallback(
-    ({id}: Project) => {
-      navigate(`/projects/${id}`);
+    ({ id }: Project) => {
+      navigate(projectPath(id));
     },
     [navigate],
   );
 
   const onCardKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLElement>, project: Project) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
+    (event: React.KeyboardEvent<HTMLElement>, project: Project) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
         goToProject(project);
       }
     },
@@ -54,7 +42,7 @@ const Projects: React.FC = () => {
             tabIndex={0}
             aria-label={`Ouvrir le projet ${project.title}`}
             onClick={() => goToProject(project)}
-            onKeyDown={(e) => onCardKeyDown(e, project)}
+            onKeyDown={(event) => onCardKeyDown(event, project)}
           >
             <div className="project-header">
               <div>

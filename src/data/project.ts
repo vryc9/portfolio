@@ -1,6 +1,6 @@
-import { Project } from "../types";
+import type { Project } from "../types";
 
-export const projects: Project[] = [
+export const projects: ReadonlyArray<Project> = [
     {
         id: 1,
         title: "Gestion de script SQL",
@@ -54,6 +54,12 @@ export const projects: Project[] = [
 ];
 
 
-export function findProjectById(idProject: string): Project {
-    return projects.find(({ id }) => id === Number(idProject)) as Project
+export function findProjectById(idProject: string): Project | undefined {
+    const numericId = Number(idProject);
+
+    if (Number.isNaN(numericId)) {
+        return undefined;
+    }
+
+    return projects.find(({ id }) => id === numericId);
 }

@@ -1,3 +1,4 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { SectionId } from "../types";
 import { FolderKanban, GraduationCap, House, Layers3, Mail, PersonStanding } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -5,7 +6,7 @@ import "./Navigation.css";
 
 interface NavigationProps {
   activeSection: SectionId;
-  setActiveSection: (section: SectionId) => void;
+  setActiveSection: Dispatch<SetStateAction<SectionId>>;
 }
 
 interface NavigationItem {
