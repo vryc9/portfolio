@@ -1,35 +1,33 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import type { FormData } from "../types";
 import "./Contact.css";
 import SectionHeader from "./SectionHeader";
 
+const INITIAL_FORM_DATA: FormData = {
+  name: "",
+  email: "",
+  message: "",
+};
+
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState<FormData>(INITIAL_FORM_DATA);
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ): void => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
+    const { name, value } = event.target;
+    const key = name as keyof FormData;
+
+    setFormData((previous) => ({
+      ...previous,
+      [key]: value,
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
     alert("Message envoyé !");
-    console.log("Form data:", formData);
-
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    setFormData(INITIAL_FORM_DATA);
   };
 
   return (

@@ -1,24 +1,28 @@
-import { Link, useParams, Navigate } from "react-router-dom";
-import { useMemo } from "react";
+import { Link, Navigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { findProjectById } from "../data/project";
 import { slugify } from "../types/utils/slugify";
-import { isTechSkill } from "./Projects";
+import { isTechSkill } from "../utils/skills";
+import { APP_ROUTES, skillPath } from "../constants/routes";
 
 const ProjectMarkdownPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const project = findProjectById(id ?? "");
-  const titleSlug = useMemo(() => slugify(project.title), [project.title]);
+
+  const project = id ? findProjectById(id) : undefined;
+  const titleSlug = project ? slugify(project.title) : "";
   const { content, isLoading, error } = useMarkdown(titleSlug);
-  if (!project) return <Navigate to="/" replace />;
+
+  if (!id || !project) {
+    return <Navigate to={APP_ROUTES.home} replace />;
+  }
 
   return (
     <main className="project-markdown-page">
       <div className="project-markdown-container">
         <header className="project-markdown-header">
-          <Link to="/" className="back-link">
+          <Link to={APP_ROUTES.home} className="back-link">
             ← Retour aux projets
           </Link>
         </header>
@@ -40,10 +44,7 @@ const ProjectMarkdownPage: React.FC = () => {
 
       <div className="project-tags">
         {project.tags.map((tag, index) => (
-          <Link
-            key={`${project.id}-${tag}-${index}`}
-            to={`/skills/${slugify(tag)}`}
-          >
+          <Link key={`${project.id}-${tag}-${index}`} to={skillPath(slugify(tag))}>
             <span
               className={`tag ${isTechSkill(tag) ? "tag--tech" : "tag--soft"}`}
             >

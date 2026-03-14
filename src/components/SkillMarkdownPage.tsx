@@ -1,40 +1,40 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { projects } from "../data/project";
-import { Project } from "../types";
+import type { Project } from "../types";
 import { slugify } from "../types/utils/slugify";
+import { APP_ROUTES, projectPath } from "../constants/routes";
 
-const formatSkillTitle = (slug: string): string => {
-  return slug
+const formatSkillTitle = (slug: string): string =>
+  slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
-};
 
 const SkillMarkdownPage: React.FC = () => {
   const { skillName } = useParams<{ skillName: string }>();
 
-  const skillTitle: string = useMemo<string>(
-    () => (skillName ? formatSkillTitle(skillName) : ""),
-    [skillName],
+  const normalizedSkillName = skillName ?? "";
+  const skillTitle = formatSkillTitle(normalizedSkillName);
+  const { content, isLoading, error } = useMarkdown(normalizedSkillName);
+
+  const relatedProjects: Project[] = useMemo(
+    () => projects.filter(({ tags }) => tags.some((tag) => slugify(tag) === normalizedSkillName)),
+    [normalizedSkillName],
   );
 
-  const { content, isLoading, error } = useMarkdown(skillName ?? "");
-  const relatedProjects: Project[] = useMemo<Project[]>(
-    () => projects.filter(({ tags }) => tags.some((tag) =>  slugify(tag) === skillName)),
-    [skillName],
-  );
-
-  if (!skillName) return <Navigate to="/" replace />;
+  if (!skillName) {
+    return <Navigate to={APP_ROUTES.home} replace />;
+  }
 
   return (
     <main className="project-markdown-page">
       <div className="project-markdown-container">
         <header className="project-markdown-header">
-          <Link to="/" className="back-link">
+          <Link to={APP_ROUTES.home} className="back-link">
             ← Retour à l'accueil
           </Link>
           <h1>{skillTitle}</h1>
@@ -67,14 +67,9 @@ const SkillMarkdownPage: React.FC = () => {
             <ul className="skill-projects__list">
               {relatedProjects.map((project) => (
                 <li key={project.id}>
-                  <Link
-                    to={`/projects/${project.id}`}
-                    className="skill-projects__card"
-                  >
+                  <Link to={projectPath(project.id)} className="skill-projects__card">
                     <span className="skill-projects__cardIcon">◈</span>
-                    <span className="skill-projects__cardTitle">
-                      {project.title}
-                    </span>
+                    <span className="skill-projects__cardTitle">{project.title}</span>
                     <span className="skill-projects__cardArrow">→</span>
                   </Link>
                 </li>

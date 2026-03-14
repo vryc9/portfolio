@@ -5,6 +5,7 @@ import { skills } from "../data/skill";
 import { slugify } from "../types/utils/slugify";
 import "./SkillSection.css";
 import SectionHeader from "./SectionHeader";
+import { skillPath } from "../constants/routes";
 
 const container = {
   hidden: {},
@@ -42,7 +43,7 @@ const SkillsSection: React.FC = memo(() => {
             viewport={{ once: true, amount: 0.25 }}
           >
             {techSkills.map((s) => {
-              const to = `/skills/${slugify(s.name)}`;
+              const to = skillPath(slugify(s.name));
               const Icon = s.icon;
 
               return (
@@ -78,7 +79,7 @@ const SkillsSection: React.FC = memo(() => {
             viewport={{ once: true, amount: 0.25 }}
           >
             {softSkills.map((s) => {
-              const to = `/skills/${slugify(s.name)}`;
+              const to = skillPath(slugify(s.name));
               const Icon = s.icon;
               return (
                 <motion.div key={s.name} variants={item}>

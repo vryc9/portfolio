@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -23,7 +23,6 @@ const Timeline: React.FC = () => {
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
   const travelerRef = useRef<HTMLDivElement | null>(null);
 
-  const entries = useMemo(() => timelineEntries, []);
   const [selected, setSelected] = useState<TimelineEntry | null>(null);
 
   useLayoutEffect(() => {
@@ -136,7 +135,7 @@ const Timeline: React.FC = () => {
         </div>
 
         <div className="tl__entries">
-          {entries.map((entry, index) => (
+          {timelineEntries.map((entry, index) => (
             <div key={entry.id} className="tl__row">
               <div
                 className="tl__dot"
