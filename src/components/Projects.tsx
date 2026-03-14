@@ -2,7 +2,8 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Project } from "../types";
 import "./Projects.css";
-import { slugify } from "../utils/slugify";
+import { slugify } from "../types/utils/slugify";
+import SectionHeader from "./SectionHeader";
 
 export const projects: Project[] = [
   {
@@ -92,8 +93,10 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects">
-      <h2 className="section-title">Projets récents</h2>
-
+      <SectionHeader
+        eyebrow="Qu'est ce que j'ai réalisé ?"
+        title="Mes réalisations"
+      />
       <div className="projects-grid">
         {projects.map((project) => (
           <article

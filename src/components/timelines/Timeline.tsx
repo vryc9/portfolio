@@ -6,11 +6,13 @@ import { timelineEntries, type TimelineEntry } from "../../data/timeline";
 import TimelineModal from "./TimelineModal";
 import "./Timeline.css";
 import { EsieaLogo, NumihLogo } from "./Logo";
+import SectionHeader from "../SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Logo: React.FC<{ which: TimelineEntry["logo"] }> = ({ which }) => {
-  if (which === "numih") return <NumihLogo className="tl__logo tl__logo--numih" />;
+  if (which === "numih")
+    return <NumihLogo className="tl__logo tl__logo--numih" />;
   return <EsieaLogo className="tl__logo tl__logo--esiea" />;
 };
 
@@ -42,7 +44,7 @@ const Timeline: React.FC = () => {
             end: "bottom 80%",
             scrub: 0.6,
           },
-        }
+        },
       );
 
       // Traveler dot follows the line
@@ -72,7 +74,7 @@ const Timeline: React.FC = () => {
               start: "top 70%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
 
         const ring = dot.querySelector(".tl__dotRing");
@@ -90,7 +92,7 @@ const Timeline: React.FC = () => {
                 start: "top 70%",
                 toggleActions: "play none none reset",
               },
-            }
+            },
           );
         }
       });
@@ -112,7 +114,7 @@ const Timeline: React.FC = () => {
               start: "top 78%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
     }, root);
@@ -122,8 +124,7 @@ const Timeline: React.FC = () => {
 
   return (
     <section id="timeline" className="tl" ref={rootRef}>
-      <h2 className="section-title">Parcours</h2>
-
+      <SectionHeader eyebrow="parcours" title="Parcours" />
       <div className="tl__friseWrap">
         <div className="tl__track">
           <div className="tl__trackBg" />
@@ -139,7 +140,9 @@ const Timeline: React.FC = () => {
             <div key={entry.id} className="tl__row">
               <div
                 className="tl__dot"
-                ref={(el) => { dotRefs.current[index] = el; }}
+                ref={(el) => {
+                  dotRefs.current[index] = el;
+                }}
               >
                 <span className="tl__dotCore" />
                 <span className="tl__dotRing" />
@@ -147,7 +150,9 @@ const Timeline: React.FC = () => {
 
               <div
                 className="tl__card"
-                ref={(el) => { cardRefs.current[index] = el; }}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
                 onClick={() => setSelected(entry)}
               >
                 <div className="tl__cardInner">
@@ -166,7 +171,10 @@ const Timeline: React.FC = () => {
                       <button
                         type="button"
                         className="tl__open"
-                        onClick={(e) => { e.stopPropagation(); setSelected(entry); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelected(entry);
+                        }}
                       >
                         Détails
                       </button>
@@ -176,8 +184,12 @@ const Timeline: React.FC = () => {
 
                     <div className="tl__meta">
                       <span className="tl__place">{entry.placeLabel}</span>
-                      {entry.location ? <span className="tl__dotSep">•</span> : null}
-                      {entry.location ? <span className="tl__location">{entry.location}</span> : null}
+                      {entry.location ? (
+                        <span className="tl__dotSep">•</span>
+                      ) : null}
+                      {entry.location ? (
+                        <span className="tl__location">{entry.location}</span>
+                      ) : null}
                     </div>
                   </div>
                 </div>

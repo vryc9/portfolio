@@ -2,8 +2,9 @@ import { memo, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { skills } from "../data/skill";
-import { slugify } from "../utils/slugify";
+import { slugify } from "../types/utils/slugify";
 import "./SkillSection.css";
+import SectionHeader from "./SectionHeader";
 
 const container = {
   hidden: {},
@@ -26,10 +27,8 @@ const SkillsSection: React.FC = memo(() => {
 
   return (
     <section id="skills">
-      <h2 className="section-title">Compétences</h2>
-
+      <SectionHeader eyebrow="Qu'est ce que je maitrise" title="Compétence" />
       <div className="skills-grid">
-        {/* TECH */}
         <div className="skills-col">
           <div className="skills-col__head">
             <h3 className="skills-col__title">Techniques</h3>
@@ -66,7 +65,6 @@ const SkillsSection: React.FC = memo(() => {
           </motion.div>
         </div>
 
-        {/* SOFT */}
         <div className="skills-col">
           <div className="skills-col__head">
             <h3 className="skills-col__title">Transverses</h3>
