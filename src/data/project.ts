@@ -32,9 +32,9 @@ export const projects: ReadonlyArray<Project> = [
     },
     {
         id: 3,
-        title: "Planéo",
+        title: "Traçabilité",
         icon: "<>",
-        description: "lorem",
+        description: "La traçabilité est une fonctionnalité qui permet d’enregistrer les actions réalisées par l’utilisateur sur les différents écrans de l’application.",
         tags: ["Angular", "Java", "NgRx", "Autonomie"],
     },
     {
@@ -49,7 +49,7 @@ export const projects: ReadonlyArray<Project> = [
         title: "DH",
         icon: "()",
         description: "lorem",
-        tags: ["Angular", "Java", "NgRx",'Git', "Compréhension du besoin", "Communication orale"],
+        tags: ["Angular", "Java", "NgRx", 'Git', "Compréhension du besoin", "Communication orale"],
     },
 ];
 
