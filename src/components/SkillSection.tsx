@@ -28,7 +28,7 @@ const SkillsSection: React.FC = memo(() => {
 
   return (
     <section id="skills">
-      <SectionHeader eyebrow="Qu'est ce que je maitrise" title="Compétence" />
+      <SectionHeader eyebrow="Ce que je maitrise" title="Mes compétences" />
       <div className="skills-grid">
         <div className="skills-col">
           <div className="skills-col__head">
