@@ -78,10 +78,10 @@
   font-weight: 600;
 }
 
-.project-markdown-page,
+/* .project-markdown-page,
 .project-markdown-page * {
   cursor: auto !important;
-}
+} */
 
 .markdown-content {
   cursor: text !important;
@@ -202,4 +202,8 @@
 .skill-projects__card:hover .skill-projects__cardArrow {
   opacity: 0.7;
   transform: translateX(0);
+}
+
+.skill-title {
+  text-align: center;
 }

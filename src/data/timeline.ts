@@ -1,4 +1,4 @@
-export type TimelineKind = "experience" | "education";
+export type TimelineKind = "experience" | "education" | 'certification';
 
 export interface TimelineLink {
   label: string;
@@ -28,7 +28,6 @@ export interface TimelineEntry {
 export const timelineEntries: TimelineEntry[] = [
   {
     id: "edu-esiea",
-
     kind: "education",
     period: " Septembre 2021 — Aujourd’hui",
     title: "Programme Expert (Bac +5)",
@@ -48,7 +47,6 @@ export const timelineEntries: TimelineEntry[] = [
   },
   {
     id: "exp-numih",
-
     kind: "experience",
     period: "Septembre 2023 — Aujourd’hui",
     title: "Développeur (Alternance)",
@@ -69,5 +67,14 @@ export const timelineEntries: TimelineEntry[] = [
       { label: "Projet : DH", to: "/projects/5" },
     ],
     skills: ["Angular", "Java", "NgRx", "Compréhension du besoin"],
+  },
+  {
+    id: "exp-certification",
+    kind: "certification",
+    period: "2024",
+    title: "Concepteur Développeur d’Applications (RNCP37873)",
+    placeLabel: "ESIEA",
+    logo: "esiea",
+    location: "Agen",
   },
 ];

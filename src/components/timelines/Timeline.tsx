@@ -2,7 +2,11 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import { timelineEntries, type TimelineEntry } from "../../data/timeline";
+import {
+  timelineEntries,
+  TimelineKind,
+  type TimelineEntry,
+} from "../../data/timeline";
 import TimelineModal from "./TimelineModal";
 import "./Timeline.css";
 import { EsieaLogo, NumihLogo } from "./Logo";
@@ -14,6 +18,12 @@ const Logo: React.FC<{ which: TimelineEntry["logo"] }> = ({ which }) => {
   if (which === "numih")
     return <NumihLogo className="tl__logo tl__logo--numih" />;
   return <EsieaLogo className="tl__logo tl__logo--esiea" />;
+};
+
+const kindLabel: Record<TimelineKind, string> = {
+  certification: "Certification",
+  education: "Formation",
+  experience: "Alternance",
 };
 
 const Timeline: React.FC = () => {
@@ -159,24 +169,12 @@ const Timeline: React.FC = () => {
                     <div className="tl__logoWrap">
                       <Logo which={entry.logo} />
                     </div>
-                    <div className="tl__kind">
-                      {entry.kind === "experience" ? "Expérience" : "Formation"}
-                    </div>
+                    <div className="tl__kind">{kindLabel[entry.kind]}</div>
                   </div>
 
                   <div className="tl__content">
                     <div className="tl__top">
                       <div className="tl__period">{entry.period}</div>
-                      <button
-                        type="button"
-                        className="tl__open"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelected(entry);
-                        }}
-                      >
-                        Détails
-                      </button>
                     </div>
 
                     <div className="tl__title">{entry.title}</div>
@@ -200,9 +198,10 @@ const Timeline: React.FC = () => {
         </div>
       </div>
 
-      {selected && (
-        <TimelineModal entry={selected} onClose={() => setSelected(null)} />
-      )}
+      {selected &&
+        (selected.kind === "education" || selected.kind === "experience") && (
+          <TimelineModal entry={selected} onClose={() => setSelected(null)} />
+        )}
     </section>
   );
 };

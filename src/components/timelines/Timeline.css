@@ -149,8 +149,7 @@
 }
 
 .tl__cardInner {
-  display: grid;
-  grid-template-columns: 88px 1fr;
+  display: flex;
   gap: 16px;
   padding: 18px 18px;
   border-radius: 22px;

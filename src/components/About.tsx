@@ -11,7 +11,7 @@ const paragraphs = [
     id: "passion",
     icon: "◈",
     label: "Motivation",
-    text: "Passionné par les nouvelles technologies depuis mon enfance, j'ai décidé d'en faire mon métier. Au quotidien, je suis quelqu'un d'assez souriant et positif. Je suis toujours prêt à aider quelqu'un, ce qui fait l'une de mes principales qualités. De nature curieuse, j'aime découvrir de nouvelles choses au quotidien, et le développement web étant un domaine qui évolue constamment, correspond donc parfaitement à mon tempérament.",
+    text: "Passionné par les nouvelles technologies depuis mon enfance, j'ai décidé d'en faire mon métier. Au quotidien, je suis quelqu'un de soutient et positif. Je suis toujours prêt à aider, ce qui fait l'une de mes principales qualités. De nature curieuse, j'aime découvrir de nouvelles choses au quotidien, et le développement web étant un domaine qui évolue constamment, correspond donc parfaitement à mon tempérament.",
   },
   {
     id: "formation",
@@ -35,7 +35,7 @@ const paragraphs = [
     id: "veille",
     icon: "◇",
     label: "Veille",
-    text: "Sur mon temps personnel, je passe beaucoup de temps à faire de la veille en lisant des articles sur Dev.to, Medium ou encore LinkedIn, et plus particulièrement dans le domaine du développement web qui me passionne. Ayant un profil fullstack, je m'amuse à créer de nouveaux projets afin de tester les nouvelles fonctionnalités des technologies qui m'intéressent.",
+    text: "Au quotidien, je passe beaucoup de temps à faire de la veille en lisant des articles sur Dev.to, Medium ou encore LinkedIn, et plus particulièrement dans le domaine du développement web qui me passionne. Ayant un profil fullstack, je m'amuse à créer de nouveaux projets afin de tester les nouvelles fonctionnalités des technologies qui m'intéressent.",
   },
 ];
 

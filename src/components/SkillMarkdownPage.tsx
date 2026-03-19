@@ -37,7 +37,8 @@ const SkillMarkdownPage: React.FC = () => {
           <Link to={APP_ROUTES.home} className="back-link">
             ← Retour à l'accueil
           </Link>
-          <h1>{skillTitle}</h1>
+          <h1 className="skill-title" >{skillTitle}</h1>
+
         </header>
 
         {isLoading && <p>Chargement du contenu...</p>}
