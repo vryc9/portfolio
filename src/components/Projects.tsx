@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects">
       <SectionHeader
-        eyebrow="Qu'est ce que j'ai réalisé ?"
+        eyebrow="Ce que j'ai réalisé ?"
         title="Mes réalisations"
       />
       <div className="projects-grid">

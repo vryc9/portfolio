@@ -57,7 +57,12 @@ export const timelineEntries: TimelineEntry[] = [
     responsibility: "Alternant",
     status: "Alternance",
     details: [
-      "Maintenance et création de fonctionnalités sur le produit principal.",
+      "Maintenance et création de fonctionnalités sur l'offre de la gestion administrative du patient",
+      "Ecrire des tests cases dans le respect des critères d'acceptance",
+      "Demander des revues de code",
+      "Faire des revues de code d’autres développeurs",
+      "Participer aux cérémonies SCRUM adaptées pour l'alternance",
+      "Faire des démonstrations des développements effectués",
     ],
     links: [
       { label: "Projet : DH", to: "/projects/5" },
