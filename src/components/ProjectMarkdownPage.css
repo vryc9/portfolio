@@ -29,6 +29,7 @@
   margin-bottom: 16px;
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .markdown-content {

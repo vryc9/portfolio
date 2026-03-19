@@ -1,5 +1,7 @@
+### Présentation 
 Au sein de notre équipe, nous avons des développeurs désignés comme "Référents BDD" qui sont responsables de l'exécution des scripts PostgreSQL et Oracle sur nos bases de données. Pour ce faire, ils utilisent un script JavaScript qui récupère les derniers scripts ajoutés à la branche principale du projet, puis ils extraient les URL GitLab associées à ces scripts. Ensuite, les référents BDD les soumettent à l’outil Jenkins, qui se charge de l'exécution des scripts. Mais cette solution prend beaucoup de temps à mettre en place
 
+### Etapes
 Afin d'optimiser leur efficacité, un nouvel écran sur le wall ( Application interne à l’équipe ) doit être mis en place, offrant une visualisation des derniers scripts récupérés depuis GitLab. Depuis cette interface, un mécanisme d'exportation génèrera un fichier texte pour chaque type de script, contenant les URLs correspondantes. De plus, un système d'états doit être intégré pour chaque script : "à traiter", "traité", et "anomalie", assurant un suivi visuel.
 
 Par défaut, lorsqu'un script est récupéré, il doit être automatiquement classé comme "à traiter" puisqu'il n'aura pas encore été exécuté sur une base de données. Une fois le script exécuté, le référent met à jour son état. Lors de l'exécution, s’il n’y a pas d’erreur, l'état devient "traité". Cependant, si le script rencontre un problème, le référent le classera en "anomalie" et a la possibilité d'ajouter une description explicative.
@@ -12,6 +14,7 @@ J’ai ensuite configuré les Webhooks sur les différents projets. J’ai d’a
 
 Pour les fonctionnalités, j’ai mis en place une logique d’extraction qui m’a servi à manipuler les données envoyées par le Webhook pour ensuite les stocker en base de données. Pour le côté utilisateur, j’ai développé un système d’export comme précisé auparavant.  La complexité dans ce projet a été de gérer le temps réel des informations. J’ai donc, utilisé les Observables, mise à disposition par Angular qui m’ont aidé lors du développement. 
 
+### Résulats et lendemain
 Aujourd'hui, l'outil est de moins en moins utilisé par l'équipe, malgré son bon fonctionnement technique. Nous nous sommes rendu compte qu'une contrainte persistait : les référents devaient manuellement reconfigurer le Webhook sur GitLab pour changer la branche cible lors des changements de contexte. Cette action répétitive a fini par décourager l'usage de l'outil sur le long terme.
 
 Ce projet m’a été très formateur sur l’aspect technique, notamment sur la configuration des Webhooks ainsi que la gestion des flux asynchrones avec les Observables Angular. Avec le recul, j'aurais dû concevoir l'architecture différemment pour éviter cette configuration manuelle. Par exemple, j'aurais pu configurer le Webhook pour écouter toutes les branches, et ajouter un filtre dynamique directement dans mon interface Angular pour laisser le référent choisir sa branche à la volée.

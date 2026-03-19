@@ -30,7 +30,7 @@ export const timelineEntries: TimelineEntry[] = [
     id: "edu-esiea",
 
     kind: "education",
-    period: "2021 — Aujourd’hui",
+    period: " Septembre 2021 — Aujourd’hui",
     title: "Programme Expert (Bac +5)",
     placeLabel: "ESIEA",
     location: "Agen",
@@ -40,6 +40,7 @@ export const timelineEntries: TimelineEntry[] = [
     details: [
       "Formation d’ingénieur / expert.",
       "L'école ESIEA une école de formation supérieur d'informatique. Elle compte plus de 10 000 diplomés avec 2 200 étudiants ou apprentis ainsi que 800 entreprises partenaires",
+      "Diplome d'Ingénieur",
     ],
     links: [
       { label: "Site ESIEA", to: "https://www.esiea.fr/", external: true },
@@ -49,7 +50,7 @@ export const timelineEntries: TimelineEntry[] = [
     id: "exp-numih",
 
     kind: "experience",
-    period: "04 Sep 2023 — Aujourd’hui",
+    period: "Septembre 2023 — Aujourd’hui",
     title: "Développeur (Alternance)",
     placeLabel: "Numih France",
     logo: "numih",

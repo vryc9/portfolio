@@ -18,7 +18,7 @@ interface NavigationItem {
 const NAV_ITEMS: NavigationItem[] = [
   { id: "hero", label: "Accueil", icon: House },
   { id: "timeline", label: "Parcours", icon: GraduationCap },
-  { id: "projects", label: "Projets", icon: FolderKanban },
+  { id: "projects", label: "Réalisations", icon: FolderKanban },
   { id: "skills", label: "Compétence", icon: Layers3 },
   { id: "about", label: "Ma présentation", icon: PersonStanding },
   { id: "contact", label: "Contact", icon: Mail },

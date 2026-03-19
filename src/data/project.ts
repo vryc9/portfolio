@@ -6,7 +6,7 @@ export const projects: ReadonlyArray<Project> = [
         title: "Gestion de script SQL",
         icon: "{}",
         description:
-            "Application permettant la gestion de script SQL avec une automatisation pour la récupération des scripts directement depuis Gitlab ",
+            "Outil de gestiuon de l'état d'éxécution des scripts SQL sur les bases de données DH",
         tags: [
             "Angular",
             "Java",
