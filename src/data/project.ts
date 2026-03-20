@@ -41,14 +41,14 @@ export const projects: ReadonlyArray<Project> = [
         id: 4,
         title: "BtoS",
         icon: "()",
-        description: "lorem",
+        description: "BtoS est un projet ayant pour objectif de faire 500km à vélo afin de faire un don au service pédiatrique de l'hopital de Sète.",
         tags: ["Anticipation", "Communication orale", "Autonomie", "Gestion de projet"],
     },
     {
         id: 5,
         title: "DH",
         icon: "()",
-        description: "lorem",
+        description: "DH est une solution permettant la gestion administrative du patient au sein d'un CHU.",
         tags: ["Angular", "Java", "NgRx", 'Git', "Compréhension du besoin", "Communication orale"],
     },
 ];
