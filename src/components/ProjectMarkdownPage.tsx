@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
+import Navigation from "./Navigation";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { findProjectById } from "../data/project";
 import { slugify } from "../types/utils/slugify";
@@ -20,6 +21,7 @@ const ProjectMarkdownPage: React.FC = () => {
 
   return (
     <main className="project-markdown-page">
+      <Navigation />
       <div className="project-markdown-container">
         <header className="project-markdown-header">
           <Link to={APP_ROUTES.home} className="back-link">

@@ -1,12 +1,14 @@
 import type { Dispatch, SetStateAction } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import type { SectionId } from "../types";
 import { FolderKanban, GraduationCap, House, Layers3, Mail, PersonStanding } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { APP_ROUTES } from "../constants/routes";
 import "./Navigation.css";
 
 interface NavigationProps {
-  activeSection: SectionId;
-  setActiveSection: Dispatch<SetStateAction<SectionId>>;
+  activeSection?: SectionId;
+  setActiveSection?: Dispatch<SetStateAction<SectionId>>;
 }
 
 interface NavigationItem {
@@ -28,7 +30,15 @@ const Navigation: React.FC<NavigationProps> = ({
   activeSection,
   setActiveSection,
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleNavClick = (sectionId: SectionId): void => {
+    if (location.pathname !== APP_ROUTES.home) {
+      navigate(APP_ROUTES.home, { state: { scrollTo: sectionId } });
+      return;
+    }
+
     const section = document.getElementById(sectionId);
 
     if (!section) {
@@ -36,7 +46,7 @@ const Navigation: React.FC<NavigationProps> = ({
     }
 
     section.scrollIntoView({ behavior: "smooth", block: "start" });
-    setActiveSection(sectionId);
+    setActiveSection?.(sectionId);
   };
 
   return (

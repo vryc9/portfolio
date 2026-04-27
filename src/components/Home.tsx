@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { SectionId } from '../types'
 import ParticleCanvas from './ParticleCanvas'
 import CustomCursor from './CustomCursor'
@@ -20,7 +21,22 @@ const SECTION_IDS: SectionId[] = [
 ];
 
 const Home = () => {
-  const [activeSection, setActiveSection] = useState<SectionId>('hero'); 
+  const [activeSection, setActiveSection] = useState<SectionId>('hero');
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTo = (location.state as { scrollTo?: SectionId } | null)?.scrollTo;
+    if (!scrollTo) {
+      return;
+    }
+    const section = document.getElementById(scrollTo);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(scrollTo);
+    }
+    window.history.replaceState({}, '');
+  }, [location.state]);
+
   useEffect(() => {
     const sections = SECTION_IDS
       .map((id) => document.getElementById(id))

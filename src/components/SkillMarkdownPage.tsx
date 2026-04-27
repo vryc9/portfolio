@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
+import Navigation from "./Navigation";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { projects } from "../data/project";
 import type { Project } from "../types";
@@ -32,6 +33,7 @@ const SkillMarkdownPage: React.FC = () => {
 
   return (
     <main className="project-markdown-page">
+      <Navigation />
       <div className="project-markdown-container">
         <header className="project-markdown-header">
           <Link to={APP_ROUTES.home} className="back-link">
