@@ -11,25 +11,25 @@ const paragraphs = [
     id: "passion",
     icon: "◈",
     label: "Motivation",
-    text: "Passionné par les nouvelles technologies depuis mon enfance, j'ai décidé d'en faire mon métier. Au quotidien, je suis quelqu'un de soutient et positif. Je suis toujours prêt à aider, ce qui fait l'une de mes principales qualités. De nature curieuse, j'aime découvrir de nouvelles choses au quotidien, et le développement web étant un domaine qui évolue constamment, correspond donc parfaitement à mon tempérament.",
+    text: "Passionné par les nouvelles technologies depuis mon enfance, j'ai assez vite eu envie d'en faire mon métier. Ce qui me plaît dans le développement, c'est qu'il évolue sans cesse : on apprend tous les jours, et aucun projet ne ressemble vraiment à un autre. C'est un domaine qui correspond bien à ma curiosité naturelle.",
   },
   {
     id: "formation",
     icon: "◉",
     label: "Formation",
-    text: "Actuellement en 4ème année d'Ingénierie du Logiciel à l'ESIEA (Agen), j'ai mené plusieurs projets techniques significatifs, comme l'élaboration d'une application web de suivi de commande ou le développement d'une application mobile pour la réservation de salles de cours. J'ai réalisé ces projets en utilisant diverses technologies telles que C#, Angular, JavaScript ou Java.",
+    text: "Je suis aujourd'hui en 5ème année du cycle Ingénierie du Logiciel à l'ESIEA d'Agen, en alternance chez NumihFrance. Cette alternance est une vraie opportunité car j'ai pu travailler sur différents sujets et j'ai pu y gagner en autonomie assez rapidement. Mon objectif à la sortie de l'école est de continuer comme développeur fullstack, principalement sur l'écosystème Java/Spring Boot côté back et Angular côté front, avec l'envie d'évoluer plus tard vers des sujets d'architecture logicielle.",
   },
   {
     id: "humain",
     icon: "◎",
     label: "En parallèle du code",
-    text: "En complément des projets informatiques, j'ai participé à des projets de formation humaine pour améliorer mes compétences transverses. L'un des projets les plus marquants a été la création d'une association afin de parcourir 500 km (Bordeaux–Sète) pour faire un don au service pédiatrique de l'hôpital de Sète grâce aux différentes récoltes que nous avons pu effectuer.",
+    text: "Ce que je mobilise le plus au quotidien, c'est mon adaptabilité. Mon alternance m'a placé sur des projets très différents et j'ai pu y devenir autonome assez vite. Je suis aussi quelqu'un de curieux et positif, et j'ai naturellement le goût de l'entraide. Cette dernière qualité s'est concrétisée dans un projet associatif qui m'a marqué : la création d'une association pour parcourir 500 km à vélo entre Bordeaux et Sète afin de récolter des dons pour le service pédiatrique de l'hôpital de Sète. Au-delà du défi physique, ce projet m'a appris à porter un objectif collectif et à fédérer une équipe autour d'une cause.",
   },
   {
     id: "pro",
     icon: "◆",
-    label: "Professionnel",
-    text: "L'une de mes principales qualités humaines est ma capacité à m'adapter rapidement dans un nouvel environnement. Durant mon alternance au sein de NumihFrance, j'ai su m'adapter à tout type de projet, ce qui m'a permis d'être assez autonome sur la plupart des missions.",
+    label: "Projet personnel et professionel",
+    text: "Je me dirige vers un poste de développeur fullstack sur l'écosystème Java/Spring Boot et Angular, avec à terme l'envie de progresser vers des sujets d'architecture logicielle. Mon alternance chez NumihFrance est le centre de ce parcours. Grâce à cette expérence, j'ai pu voir la réalité d'une équipe en production et m'a permis de gagner rapidement en autonomie sur des projets variés.En parallèle, je développe un projet personnel, Planeo, sur une stack Angular + Spring Boot + MySQL. Ce projet me sert d'apprentissage pour aller plus loin sur des sujets que je veux maîtriser, comme l'architecture hexagonale côté backend ou les nouvelles fonctionnalités d'Angular côté frontend ainsi que l'infrastructure en micro-service."
   },
   {
     id: "veille",
@@ -40,7 +40,7 @@ const paragraphs = [
 ];
 
 const stats = [
-  { value: "4", unit: "ans", label: "à l'ESIEA" },
+  { value: "5", unit: "ans", label: "à l'ESIEA" },
   { value: "500", unit: "km", label: "parcourus" },
   { value: "∞", unit: "", label: "curiosité" },
 ];
