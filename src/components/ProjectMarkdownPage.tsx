@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import Navigation from "./Navigation";
+import CustomCursor from "./CustomCursor";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { findProjectById } from "../data/project";
 import { slugify } from "../types/utils/slugify";
@@ -21,6 +22,7 @@ const ProjectMarkdownPage: React.FC = () => {
 
   return (
     <main className="project-markdown-page">
+      <CustomCursor />
       <Navigation />
       <div className="project-markdown-container">
         <header className="project-markdown-header">
@@ -31,6 +33,7 @@ const ProjectMarkdownPage: React.FC = () => {
           >
             ← Retour aux projets
           </Link>
+          <h1 className="skill-title">{project.title}</h1>
         </header>
 
         {isLoading && <p>Chargement du contenu...</p>}

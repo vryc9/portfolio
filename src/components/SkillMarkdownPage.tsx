@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import Navigation from "./Navigation";
+import CustomCursor from "./CustomCursor";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { projects } from "../data/project";
 import type { Project } from "../types";
@@ -33,6 +34,7 @@ const SkillMarkdownPage: React.FC = () => {
 
   return (
     <main className="project-markdown-page">
+      <CustomCursor />
       <Navigation />
       <div className="project-markdown-container">
         <header className="project-markdown-header">
