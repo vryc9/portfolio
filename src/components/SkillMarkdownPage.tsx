@@ -36,8 +36,12 @@ const SkillMarkdownPage: React.FC = () => {
       <Navigation />
       <div className="project-markdown-container">
         <header className="project-markdown-header">
-          <Link to={APP_ROUTES.home} className="back-link">
-            ← Retour à l'accueil
+          <Link
+            to={APP_ROUTES.home}
+            state={{ scrollTo: "skills" }}
+            className="back-link"
+          >
+            ← Retour aux compétences
           </Link>
           <h1 className="skill-title" >{skillTitle}</h1>
 

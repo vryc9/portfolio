@@ -24,7 +24,11 @@ const ProjectMarkdownPage: React.FC = () => {
       <Navigation />
       <div className="project-markdown-container">
         <header className="project-markdown-header">
-          <Link to={APP_ROUTES.home} className="back-link">
+          <Link
+            to={APP_ROUTES.home}
+            state={{ scrollTo: "projects" }}
+            className="back-link"
+          >
             ← Retour aux projets
           </Link>
         </header>
