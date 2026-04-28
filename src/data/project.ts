@@ -46,9 +46,9 @@ export const projects: ReadonlyArray<Project> = [
     },
     {
         id: 5,
-        title: "DH",
+        title: "Tableau de bord",
         icon: "()",
-        description: "DH est une solution permettant la gestion administrative du patient au sein d'un CHU.",
+        description: "Le tableau de bord est un fonctionnalité qui permet aux admissionnistes d'accéder aux différents écrans sur la solution principale de l'entreprise",
         tags: ["Angular", "Java", "NgRx", 'Git', "Compréhension du besoin", "Communication orale"],
     },
 ];
