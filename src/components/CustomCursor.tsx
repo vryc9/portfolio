@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import type { Position } from "../types";
 
 const INTERACTIVE_SELECTOR = "a, button, .project-card, .nav-item";
@@ -55,7 +56,7 @@ const CustomCursor: React.FC = () => {
     };
   }, []);
 
-  return (
+  return createPortal(
     <>
       <div
         className="cursor"
@@ -75,7 +76,8 @@ const CustomCursor: React.FC = () => {
           top: `${position.y}px`,
         }}
       />
-    </>
+    </>,
+    document.body
   );
 };
 
