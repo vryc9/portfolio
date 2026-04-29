@@ -198,10 +198,9 @@ const Timeline: React.FC = () => {
         </div>
       </div>
 
-      {selected &&
-        (selected.kind === "education" || selected.kind === "experience") && (
-          <TimelineModal entry={selected} onClose={() => setSelected(null)} />
-        )}
+      {selected && (
+        <TimelineModal entry={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   );
 };

@@ -71,10 +71,19 @@ export const timelineEntries: TimelineEntry[] = [
   {
     id: "exp-certification",
     kind: "certification",
-    period: "2024",
+    period: "Septembre 2021 — Juin 2023",
     title: "Concepteur Développeur d’Applications (RNCP37873)",
     placeLabel: "ESIEA",
     logo: "esiea",
     location: "Agen",
+    responsibility: "Étudiant",
+    details: [
+      "Pédagogie par projet : apprentissage ancré dans des réalisations concrètes tout au long du cursus.",
+      "Projets techniques variés couvrant le développement logiciel, les réseaux et la cybersécurité.",
+      "Projets de formation humaine favorisant le travail en équipe, la communication et la prise de responsabilité.",
+    ],
+    links: [
+      { label: "Site ESIEA", to: "https://www.esiea.fr/", external: true },
+    ],
   },
 ];
