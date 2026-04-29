@@ -1,4 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import MarkdownLink from "./MarkdownLink";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import Navigation from "./Navigation";
@@ -46,7 +47,7 @@ const ProjectMarkdownPage: React.FC = () => {
 
         {!isLoading && !error && (
           <article className="markdown-content">
-            <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown components={{ a: MarkdownLink }}>{content}</ReactMarkdown>
           </article>
         )}
       </div>

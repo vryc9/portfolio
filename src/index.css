@@ -24,6 +24,10 @@ body {
   cursor: none;
 }
 
+.markdown-content strong  {
+  font-weight: 900;
+}
+
 #root {
   position: relative;
   z-index: 1;

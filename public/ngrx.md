@@ -12,7 +12,7 @@ Aujourd’hui, NgRx a évolué avec l’arrivée du **SignalStore**, qui est bas
 
 ## Réalisations
 
-J’ai découvert NgRx durant mon alternance en travaillant d’abord sur de petits sujets afin de prendre en main la technologie, que je n’avais jamais utilisée auparavant. Puis je suis monté en compétence en élaborant un tableau de bord pour les admissionnistes dans les CHU. NgRx m’a permis de gérer l’état global de ce tableau de bord, qui centralise plusieurs fonctionnalités.
+J’ai découvert NgRx durant mon alternance en travaillant d’abord sur de petits sujets afin de prendre en main la technologie, que je n’avais jamais utilisée auparavant. Puis je suis monté en compétence en élaborant un [**tableau de bord**](/projects/5) pour les admissionnistes dans les CHU. NgRx m’a permis de gérer l’état global de ce tableau de bord, qui centralise plusieurs fonctionnalités.
 
 Le tableau de bord intègre notamment un système d’alertes, permettant de notifier les admissionnistes lors d’une mise à jour de l’application ou lorsqu’un webservice est indisponible, ainsi qu’un système de mémos, comparable à des post-it, directement intégré à l’interface. Lors de la mise en place de la logique applicative, j’ai conçu l’ensemble du flux NgRx. J’ai commencé par dispatcher des actions depuis l’application, que j’ai fait écouter par des effects afin de déclencher les appels à l’API. Une fois la réponse reçue, j’ai déclenché une action de succès contenant les données retournées par l’API. Cette action est ensuite traitée par un reducer que j’ai implémenté, chargé de mettre à jour le store.
 

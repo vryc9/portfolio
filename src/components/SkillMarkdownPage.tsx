@@ -9,6 +9,7 @@ import { projects } from "../data/project";
 import type { Project } from "../types";
 import { slugify } from "../types/utils/slugify";
 import { APP_ROUTES, projectPath } from "../constants/routes";
+import MarkdownLink from "./MarkdownLink";
 
 const formatSkillTitle = (slug: string): string =>
   slug
@@ -59,7 +60,7 @@ const SkillMarkdownPage: React.FC = () => {
 
         {!isLoading && !error && (
           <article className="markdown-content">
-            <ReactMarkdown>{content}</ReactMarkdown>
+            <ReactMarkdown components={{ a: MarkdownLink }}>{content}</ReactMarkdown>
           </article>
         )}
 
