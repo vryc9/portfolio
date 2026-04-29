@@ -6,7 +6,7 @@ export const projects: ReadonlyArray<Project> = [
         title: "Gestion de script SQL",
         icon: "{}",
         description:
-            "Outil de gestiuon de l'état d'éxécution des scripts SQL sur les bases de données DH",
+            "Outil de gestion de l'état d'éxécution des scripts SQL sur les bases de données DH",
         tags: [
             "Angular",
             "Java",

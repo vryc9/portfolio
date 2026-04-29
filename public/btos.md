@@ -21,7 +21,7 @@ J’ai également organisé une **vente de pains pita afin d’alimenter notre c
 
 De plus je me suis occupé de contacter un foodtruck afin de faire un nouvel événement plus gros que le précédent. Le but était de louer un foodtruck et de le faire venir directement sur notre campus. Malheureusement cet événement n'a jamais pu voir le jour car les dates ne correspondaient pas avec notre emploi du temps. 
 
-Sur ce projet, il y a eu différents acteurs qui ont permis son bon déroulement. Nous étions en contact avec l’hôpital de Sète afin de préparer notre arrivée ainsi que le déroulé du projet. De plus, grâce à mon réseau personnel, j’ai contacté trois journaux locaux **« Le Petit Bleu », « la Dépêche » ainsi que le « Sud-Ouest »**. Grâce à ces interviews nous avons pu faire parler de notre projet à une grande échelle, nous avons reçu des dons et nous 
+Sur ce projet, il y a eu différents acteurs qui ont permis son bon déroulement. Nous étions en contact avec l’hôpital de Sète afin de préparer notre arrivée ainsi que le déroulé du projet. De plus, grâce à mon réseau personnel, j’ai contacté trois journaux locaux **« Le Petit Bleu », « la Dépêche » ainsi que le « Sud-Ouest »**. Grâce à ces interviews nous avons pu faire parler de notre projet à une grande échelle.
 
 
 ### Résultats et lendemain du projet

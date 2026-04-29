@@ -8,34 +8,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 const paragraphs = [
   {
-    id: "passion",
-    icon: "◈",
-    label: "Motivation",
-    text: "Passionné par les nouvelles technologies depuis mon enfance, j'ai assez vite eu envie d'en faire mon métier. Ce qui me plaît dans le développement, c'est qu'il évolue sans cesse : on apprend tous les jours, et aucun projet ne ressemble vraiment à un autre. C'est un domaine qui correspond bien à ma curiosité naturelle.",
+    id: "valeurs",
+    icon: "⬢",
+    label: "Mes valeurs",
+    text: "En tant que futur ingénieur, j’accorde une importance particulière à la responsabilité, à la qualité du travail et à l’impact de ce que je développe. Pour moi, écrire du code ne se limite pas à une fonctionnalité : il s’agit de concevoir des solutions fiables, maintenables et utiles pour les utilisateurs. J’essaie donc toujours d’adopter une démarche rigoureuse, en prenant en compte les contraintes techniques mais aussi les enjeux métier. Le travail en équipe est également central dans ma manière de fonctionner : partager, écouter et progresser collectivement fait partie intégrante de ma vision du développement logiciel.",
   },
-  {
-    id: "formation",
-    icon: "◉",
-    label: "Formation",
-    text: "Je suis aujourd'hui en 5ème année du cycle Ingénierie du Logiciel à l'ESIEA d'Agen, en alternance chez NumihFrance. Cette alternance est une vraie opportunité car j'ai pu travailler sur différents sujets et j'ai pu y gagner en autonomie assez rapidement. Mon objectif à la sortie de l'école est de continuer comme développeur fullstack, principalement sur l'écosystème Java/Spring Boot côté back et Angular côté front, avec l'envie d'évoluer plus tard vers des sujets d'architecture logicielle.",
-  },
-  {
-    id: "humain",
-    icon: "◎",
-    label: "En parallèle du code",
-    text: "Ce que je mobilise le plus au quotidien, c'est mon adaptabilité. Mon alternance m'a placé sur des projets très différents et j'ai pu y devenir autonome assez vite. Je suis aussi quelqu'un de curieux et positif, et j'ai naturellement le goût de l'entraide. Cette dernière qualité s'est concrétisée dans un projet associatif qui m'a marqué : la création d'une association pour parcourir 500 km à vélo entre Bordeaux et Sète afin de récolter des dons pour le service pédiatrique de l'hôpital de Sète. Au-delà du défi physique, ce projet m'a appris à porter un objectif collectif et à fédérer une équipe autour d'une cause.",
-  },
+
   {
     id: "pro",
     icon: "◆",
-    label: "Projet personnel et professionel",
-    text: "Je me dirige vers un poste de développeur fullstack sur l'écosystème Java/Spring Boot et Angular, avec à terme l'envie de progresser vers des sujets d'architecture logicielle. Mon alternance chez NumihFrance est le centre de ce parcours. Grâce à cette expérence, j'ai pu voir la réalité d'une équipe en production et m'a permis de gagner rapidement en autonomie sur des projets variés.En parallèle, je développe un projet personnel, Planeo, sur une stack Angular + Spring Boot + MySQL. Ce projet me sert d'apprentissage pour aller plus loin sur des sujets que je veux maîtriser, comme l'architecture hexagonale côté backend ou les nouvelles fonctionnalités d'Angular côté frontend ainsi que l'infrastructure en micro-service."
+    label: "Projet professionnel et personnel",
+    text: "Mon objectif est de devenir développeur fullstack spécialisé dans l’écosystème Java / Spring Boot et Angular. À court terme, je souhaite consolider mes compétences en développement logiciel au sein d’équipes produit, en comprenant mieux les enjeux de qualité, de performance et de maintenabilité. À moyen terme, j’aimerais évoluer vers des sujets d’architecture logicielle afin de participer à la conception de systèmes plus complexes et scalables. Mon alternance chez Numih France à un rôle important car elle m’a permis de travailler sur des projets concrets en production, de monter en autonomie et de comprendre les réalités d’une organisation technique. En parallèle, je développe le projet personnel Planeo, une application construite avec Angular, Spring Boot et MySQL. Ce projet me permet d’explorer des sujets avancés comme l’architecture hexagonale, les microservices et les bonnes pratiques de conception logicielle.",
   },
+
+  {
+    id: "humain",
+    icon: "◎",
+    label: "Mes principales qualités humaines",
+    text: "L’adaptabilité est la qualité que j’ai le plus développée au cours de mon alternance. J’ai été confronté à des projets très différents, avec des contextes techniques et fonctionnels variés, ce qui m’a appris à m’intégrer rapidement et à devenir autonome efficacement. La curiosité est également important car elle m'a permis comprendre en profondeur les technologies que j’utilise et à expérimenter régulièrement de nouveaux outils. Enfin, l’entraide est une valeur essentielle dans ma manière de travailler. Cela s’est notamment illustré dans un projet associatif que j’ai co-organisé : un parcours de 500 km à vélo entre Bordeaux et Sète pour récolter des dons au profit du service pédiatrique de l’hôpital de Sète. Cette expérience m’a appris à travailler en équipe autour d’un objectif commun, à maintenir une dynamique collective et à m’impliquer dans un projet à fort impact humain.",
+  },
+
+  {
+    id: "passion",
+    icon: "◈",
+    label: "Centres d’intérêt",
+    text: "Passionné par les nouvelles technologies depuis longtemps, j’ai rapidement orienté mon parcours vers le développement logiciel. Ce qui me motive dans ce domaine, c’est sa constante évolution : chaque projet est différent et permet d’apprendre en continu. J’apprécie particulièrement le fait de pouvoir expérimenter et construire des applications concrètes, ce qui nourrit ma curiosité et mon envie de progresser.",
+  },
+
   {
     id: "veille",
     icon: "◇",
     label: "Veille",
-    text: "Au quotidien, je passe beaucoup de temps à faire de la veille en lisant des articles sur Dev.to, Medium ou encore LinkedIn, et plus particulièrement dans le domaine du développement web qui me passionne. Ayant un profil fullstack, je m'amuse à créer de nouveaux projets afin de tester les nouvelles fonctionnalités des technologies qui m'intéressent.",
+    text: "Je consacre une partie importante de mon temps à la veille technologique, notamment via des articles sur Dev.to, Medium et LinkedIn. Cela me permet de rester à jour sur les évolutions du développement web, aussi bien côté backend que frontend. En parallèle, je réalise régulièrement des projets personnels afin de tester de nouvelles fonctionnalités et d’approfondir mes connaissances sur les technologies que j’utilise au quotidien.",
   },
 ];
 
