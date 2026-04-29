@@ -2,7 +2,7 @@
 Durant mon alternance, j’ai développé sur l’application web principale de l’entreprise, **DH**, une solution permettant le suivi du patient au sein d’un CHU.
 Dans le cadre d’un lancement en production pour un nouveau CHU, l’établissement souhaitait bénéficier d’un **tableau de bord** pour ses **admissionnistes** sur l’application web. Le but de ce tableau de bord est de permettre de rechercher rapidement un patient, d’accéder directement à certains menus de l’application, de visualiser des alertes remontées par le service informatique et d’accéder à des mémos, c’est-à-dire des rappels que les admissionnistes peuvent créer.
 
-### Ojectifs
+### Obectifs
 L’enjeu de cette fonctionnalité était important, car ce tableau de bord faisait partie des attentes du site pour lancer l’application en production. L’objectif était donc de livrer le tableau de bord dans les temps afin qu’il soit prêt pour ce lancement. L’un des principaux risques était de ne pas livrer à temps, ou de livrer une version instable, car j’ai réalisé le développement complet du tableau de bord en autonomie. De plus, étant en alternance avec trois jours de présence par semaine, le délai pouvait être difficile à tenir.
 
 ### Etapes
@@ -19,7 +19,7 @@ La dernière fonctionnalité que j’ai développée est le **système de mémos
 
 Pour l’ensemble de ces fonctionnalités, j’ai utilisé **NgRx**, qui m’a permis de centraliser la gestion des données du tableau de bord et de déclencher les actions nécessaires à la récupération des données depuis le backend.
 
-### Acteurs et intéractions
+### Acteurs et interactions
 Plusieurs acteurs ont gravité autour de ce projet. Il y avait notamment le **Product Owner** et le **Product Manager** pour l’aspect métier. J’ai également été en contact avec l’**UX Designer** pour la partie maquettage du tableau de bord. L’ensemble des interactions s’est majoritairement déroulé lors de réunions **Teams**, en amont du développement. Pour la gestion du projet, j’ai également été accompagné par ma responsable d’alternance, avec qui nous estimions les user stories lors de notre point de synchronisation hebdomadaire.
 
 ### Résultats et lendemain

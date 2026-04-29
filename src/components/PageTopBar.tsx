@@ -31,7 +31,10 @@ const PageTopBar: React.FC<PageTopBarProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -44,6 +47,8 @@ const PageTopBar: React.FC<PageTopBarProps> = ({
       <Link to={backTo} state={backState} className="page-top-bar__back">
         ← {backLabel}
       </Link>
+
+      <span className="page-top-bar__title">Enzo Volpato</span>
 
       <div className="page-top-bar__dropdown" ref={dropdownRef}>
         <button
@@ -59,9 +64,12 @@ const PageTopBar: React.FC<PageTopBarProps> = ({
             className={`page-top-bar__chevron${isOpen ? " page-top-bar__chevron--open" : ""}`}
           />
         </button>
-
         {isOpen && (
-          <ul className="page-top-bar__menu" role="listbox" aria-label={dropdownLabel}>
+          <ul
+            className="page-top-bar__menu"
+            role="listbox"
+            aria-label={dropdownLabel}
+          >
             {items.map((item) => (
               <li key={item.to} role="option" aria-selected={item.isActive}>
                 <Link
@@ -74,7 +82,10 @@ const PageTopBar: React.FC<PageTopBarProps> = ({
                   )}
                   <span className="page-top-bar__menu-label">{item.label}</span>
                   {item.isActive && (
-                    <span className="page-top-bar__menu-active-dot" aria-hidden="true" />
+                    <span
+                      className="page-top-bar__menu-active-dot"
+                      aria-hidden="true"
+                    />
                   )}
                 </Link>
               </li>
