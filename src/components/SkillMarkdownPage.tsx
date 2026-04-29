@@ -2,14 +2,15 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
-import Navigation from "./Navigation";
 import CustomCursor from "./CustomCursor";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { projects } from "../data/project";
 import type { Project } from "../types";
 import { slugify } from "../types/utils/slugify";
-import { APP_ROUTES, projectPath } from "../constants/routes";
+import { APP_ROUTES, projectPath, skillPath } from "../constants/routes";
 import MarkdownLink from "./MarkdownLink";
+import PageTopBar from "./PageTopBar";
+import { skills } from "../data/skill";
 
 const formatSkillTitle = (slug: string): string =>
   slug
@@ -29,6 +30,21 @@ const SkillMarkdownPage: React.FC = () => {
     [normalizedSkillName],
   );
 
+  const skillItems = useMemo(
+    () =>
+      skills.map((skill) => {
+        const slug = slugify(skill.name);
+        const Icon = skill.icon;
+        return {
+          label: skill.name,
+          to: skillPath(slug),
+          isActive: slug === normalizedSkillName,
+          icon: <Icon size={15} />,
+        };
+      }),
+    [normalizedSkillName],
+  );
+
   if (!skillName) {
     return <Navigate to={APP_ROUTES.home} replace />;
   }
@@ -36,18 +52,18 @@ const SkillMarkdownPage: React.FC = () => {
   return (
     <main className="project-markdown-page">
       <CustomCursor />
-      <Navigation />
+      <PageTopBar
+        backTo={APP_ROUTES.home}
+        backState={{ scrollTo: "skills" }}
+        backLabel="Compétences"
+        title={skillTitle}
+        dropdownLabel="Compétences"
+        items={skillItems}
+      />
+
       <div className="project-markdown-container">
         <header className="project-markdown-header">
-          <Link
-            to={APP_ROUTES.home}
-            state={{ scrollTo: "skills" }}
-            className="back-link"
-          >
-            ← Retour aux compétences
-          </Link>
-          <h1 className="skill-title" >{skillTitle}</h1>
-
+          <h1 className="skill-title">{skillTitle}</h1>
         </header>
 
         {isLoading && <p>Chargement du contenu...</p>}
