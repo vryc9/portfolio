@@ -29,7 +29,7 @@ export const timelineEntries: TimelineEntry[] = [
   {
     id: "edu-esiea",
     kind: "education",
-    period: " Septembre 2021 — Aujourd’hui",
+    period: " Septembre 2023 — Aujourd’hui",
     title: "Programme Expert (Bac +5)",
     placeLabel: "ESIEA",
     location: "Agen",
