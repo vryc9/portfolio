@@ -7,7 +7,7 @@ import { useMarkdown } from "../hooks/useSkillsMarkdown";
 import { projects } from "../data/project";
 import type { Project } from "../types";
 import { slugify } from "../types/utils/slugify";
-import { APP_ROUTES, projectPath, skillPath } from "../constants/routes";
+import { APP_ROUTES, projectPath } from "../constants/routes";
 import MarkdownLink from "./MarkdownLink";
 import Navigation from "./Navigation";
 
