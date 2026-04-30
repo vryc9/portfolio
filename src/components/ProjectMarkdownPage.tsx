@@ -1,15 +1,14 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import "./ProjectMarkdownPage.css";
 import CustomCursor from "./CustomCursor";
 import { useMarkdown } from "../hooks/useSkillsMarkdown";
-import { findProjectById, projects } from "../data/project";
+import { findProjectById } from "../data/project";
 import { slugify } from "../types/utils/slugify";
 import { isTechSkill } from "../utils/skills";
 import { APP_ROUTES, projectPath, skillPath } from "../constants/routes";
 import MarkdownLink from "./MarkdownLink";
-import PageTopBar from "./PageTopBar";
+import Navigation from "./Navigation";
 
 const ProjectMarkdownPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,23 +17,6 @@ const ProjectMarkdownPage: React.FC = () => {
   const titleSlug = project ? slugify(project.title) : "";
   const { content, isLoading, error } = useMarkdown(titleSlug);
 
-  const projectItems = useMemo(
-    () =>
-      projects.map((p) => ({
-        label: p.title,
-        to: projectPath(p.id),
-        isActive: p.id === project?.id,
-        icon: (
-          <span
-            style={{ fontFamily: "JetBrains Mono, monospace", fontSize: 12 }}
-          >
-            {p.icon}
-          </span>
-        ),
-      })),
-    [project?.id],
-  );
-
   if (!id || !project) {
     return <Navigate to={APP_ROUTES.home} replace />;
   }
@@ -42,14 +24,7 @@ const ProjectMarkdownPage: React.FC = () => {
   return (
     <main className="project-markdown-page">
       <CustomCursor />
-      <PageTopBar
-        backTo={APP_ROUTES.home}
-        backState={{ scrollTo: "projects" }}
-        backLabel="Réalisations"
-        title={project.title}
-        dropdownLabel="Réalisations"
-        items={projectItems}
-      />
+      <Navigation />
 
       <div className="project-markdown-container">
         <header className="project-markdown-header">

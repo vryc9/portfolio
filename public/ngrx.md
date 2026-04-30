@@ -8,7 +8,7 @@ NgRx est une bibliothèque de gestion d’état pour les applications Angular, b
 - les **selectors** qui exposent l’état aux composants ;
 - les **effects** qui gèrent les effets de bord (appels HTTP, logique asynchrone).
 
-Aujourd’hui, NgRx a évolué avec l’arrivée du **SignalStore**, qui est basé sur les signaux introduits dans la version 16 d’Angular. Les signaux permettent de gérer la réactivité beaucoup plus simplement et améliorent les performances, car Angular sait exactement quelles parties du template dépendent du signal Cependant, le SignalStore ne reprend pas directement le pattern Redux. Il existe néanmoins l’API **Events** pour le SignalStore, qui permet d’utiliser le pattern Redux au sein du SignalStore.
+Aujourd’hui, NgRx a évolué avec l’arrivée du **SignalStore**, qui est basé sur les signaux introduits dans la version 16 d’Angular. Les signaux permettent de gérer la réactivité beaucoup plus simplement et améliorent les performances, car Angular sait exactement quelles parties du template dépendent du signal. Cependant, le SignalStore ne reprend pas directement le pattern Redux. Il existe néanmoins l’API **Events** pour le SignalStore, qui permet d’utiliser le pattern Redux au sein du SignalStore.
 
 ## Réalisations
 

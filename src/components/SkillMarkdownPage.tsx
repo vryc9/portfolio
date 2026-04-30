@@ -9,8 +9,7 @@ import type { Project } from "../types";
 import { slugify } from "../types/utils/slugify";
 import { APP_ROUTES, projectPath, skillPath } from "../constants/routes";
 import MarkdownLink from "./MarkdownLink";
-import PageTopBar from "./PageTopBar";
-import { skills } from "../data/skill";
+import Navigation from "./Navigation";
 
 const formatSkillTitle = (slug: string): string =>
   slug
@@ -30,21 +29,6 @@ const SkillMarkdownPage: React.FC = () => {
     [normalizedSkillName],
   );
 
-  const skillItems = useMemo(
-    () =>
-      skills.map((skill) => {
-        const slug = slugify(skill.name);
-        const Icon = skill.icon;
-        return {
-          label: skill.name,
-          to: skillPath(slug),
-          isActive: slug === normalizedSkillName,
-          icon: <Icon size={15} />,
-        };
-      }),
-    [normalizedSkillName],
-  );
-
   if (!skillName) {
     return <Navigate to={APP_ROUTES.home} replace />;
   }
@@ -52,14 +36,7 @@ const SkillMarkdownPage: React.FC = () => {
   return (
     <main className="project-markdown-page">
       <CustomCursor />
-      <PageTopBar
-        backTo={APP_ROUTES.home}
-        backState={{ scrollTo: "skills" }}
-        backLabel="Compétences"
-        title={skillTitle}
-        dropdownLabel="Compétences"
-        items={skillItems}
-      />
+      <Navigation />
 
       <div className="project-markdown-container">
         <header className="project-markdown-header">

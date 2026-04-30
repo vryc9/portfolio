@@ -6,7 +6,7 @@ export const projects: ReadonlyArray<Project> = [
         title: "Gestion de script SQL",
         icon: "{}",
         description:
-            "Outil de gestion de l'état d'éxécution des scripts SQL sur les bases de données DH",
+            "Outil de gestion de l'état d'exécution des scripts SQL sur les bases de données DH",
         tags: [
             "Angular",
             "Java",
@@ -20,7 +20,7 @@ export const projects: ReadonlyArray<Project> = [
         id: 2,
         title: "Comparateur XML",
         icon: "[]",
-        description: "Application permettant la comparaison de deux fichier XML",
+        description: "Application permettant la comparaison de deux fichiers XML",
         tags: [
             "Angular",
             "Java",
@@ -41,14 +41,14 @@ export const projects: ReadonlyArray<Project> = [
         id: 4,
         title: "BtoS",
         icon: "()",
-        description: "BtoS est un projet ayant pour objectif de faire 500km à vélo afin de faire un don au service pédiatrique de l'hopital de Sète.",
+        description: "BtoS est un projet ayant pour objectif de faire 500km à vélo afin de faire un don au service pédiatrique de l'hôpital de Sète.",
         tags: ["Anticipation", "Communication orale", "Autonomie", "Gestion de projet"],
     },
     {
         id: 5,
         title: "Tableau de bord",
         icon: "()",
-        description: "Le tableau de bord est un fonctionnalité qui permet aux admissionnistes d'accéder aux différents écrans sur la solution principale de l'entreprise",
+        description: "Le tableau de bord est une fonctionnalité qui permet aux admissionnistes d'accéder aux différents écrans sur la solution principale de l'entreprise",
         tags: ["Angular", "Java", "NgRx", 'Git', "Compréhension du besoin", "Communication orale"],
     },
 ];

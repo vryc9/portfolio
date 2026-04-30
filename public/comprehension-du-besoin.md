@@ -4,9 +4,9 @@ La compréhension du besoin, dans un contexte professionnel, c’est la **capaci
 Dans le monde du travail, bien définir le besoin est très important pour réussir un projet. Pour cela, il faut comprendre ce que veulent les personnes concernées, repérer ce qui est vraiment essentiel, classer les priorités et proposer une solution qui répond correctement aux attentes.
 
 # Réalisations
-Sur l’ensemble des projets que j’ai mené, la compréhension du besoin a été très importante afin de bien **cerner les attentes** du projet et de rendre des livrables qui répondent à la demande du porteur du projet. Sur certains projets menés en école, la compréhension a été plus ou moins complexe, avec soit trop d’information qui perdait le groupe soit le peu d’information.
+Sur l’ensemble des projets que j’ai menés, la compréhension du besoin a été très importante afin de bien **cerner les attentes** du projet et de rendre des livrables qui répondent à la demande du porteur du projet. Sur certains projets menés en école, la compréhension a été plus ou moins complexe, avec soit trop d’information qui perdait le groupe soit le peu d’information.
 
-Travaillant dans la plupart du temps en agilité, nous avions des **réunions à chaque fin de sprint** avec le commanditaire afin de lui montrer l’état de notre avancée ou de redéfinir le besoin lorsque la compréhension n’était pas claire. 
+Travaillant la plupart du temps en agilité, nous avions des **réunions à chaque fin de sprint** avec le commanditaire afin de lui montrer l’état de notre avancée ou de redéfinir le besoin lorsque la compréhension n’était pas claire. 
 
 Un premier projet dans lequel la compréhension du besoin a été déterminante est le [**comparateur de fichiers XML**](/projects/2). Ce projet a été porté par les **product owners** de mon équipe. Leur besoin était de comparer des messages au format XML, générés par nos applications, afin de vérifier si les messages envoyés étaient identiques. 
 
@@ -20,7 +20,7 @@ Ces échanges m'ont permis de comprendre qu'en cas d'anomalie, le référent dev
 
 
 # Autocritique et évolutions
-Pour un développeur, la compréhension du besoin est une chose car c’est ce qui permet de traduire la volonté du client en une solution. Grâce une bonne compréhension, on peut se **focaliser sur les choses les plus prioritaires** ce qui permet d’avancer un projet plus vite. Au départ, j’ai trouvé difficile de poser les bonnes questions afin de cerner correctement le besoin. Au fur et à mesure des projets, tout se processus s’est simplifié.
+Pour un développeur, la compréhension du besoin est une chose essentielle car c’est ce qui permet de traduire la volonté du client en une solution. Grâce à une bonne compréhension, on peut se **focaliser sur les choses les plus prioritaires** ce qui permet d’avancer un projet plus vite. Au départ, j’ai trouvé difficile de poser les bonnes questions afin de cerner correctement le besoin. Au fur et à mesure des projets, tout ce processus s’est simplifié.
 
 Aujourd’hui, je pense avoir un **niveau maitrisé** sur cette compétence. Pour l’évolution, ça serait de continuer à être proche des commanditaires pour livrer des livrables qui correspondent à leurs attentes. Si je devais donner un conseil, ça serait de se mettre à la place du client lorsqu’on pose des questions. Une bonne technique est de reformuler la demande avec vos propres mots. Cela permet de voir si vous avez bien compris et cela montre au client que vous avez bien compris le besoin. 
 

@@ -51,8 +51,8 @@ J’ai également présenté le projet aux développeurs de l’équipe lors de 
 
 Pour moi, ce projet a été particulièrement formateur sur plusieurs plans. Sur le plan technique, j'ai découvert Spring Boot côté backend, la manipulation de XML via JAXB et la réflexion Java pour l'extraction dynamique des valeurs, et j'ai renforcé mes compétences Angular en particulier sur RxJS avec les BehaviorSubject et combineLatest pour la synchronisation des flux entre les deux fichiers. Dans l'immédiat suivant la livraison, l'outil a été utilisé par les PO. À distance, après quelques semaines, les usages ont commencé à s'espacer. Aujourd'hui, l'outil n'est plus utilisé activement par l'équipe, ce qui constitue mon principal regret sur ce projet.
 
-Mon principal regret est que l'outil ne soit plus utilisé aujourd'hui. En analysant cette perte d'usage, j'identifie deux causes principale : 
+Mon principal regret est que l'outil ne soit plus utilisé aujourd'hui. En analysant cette perte d'usage, j'identifie deux causes principales : 
 La première est un manque de retours utilisateurs. Une fois la livraison faite, je n'ai pas mis en place de mécanisme pour collecter les problèmes rencontrés par les PO au fil de leurs utilisations. Sans ces retours, je n'avais pas de levier pour faire évoluer l'outil et maintenir son utilité perçue.
 
 La seconde est que peu de temps après la livraison, j'ai rejoint le développement du produit principal de l'équipe, et les Product Owners ont été sollicités en priorité sur mes nouvelles user stories. 
-Avec du recul, j'aurais dû anticiper cette transition en prévoyant, une phase d'accompagnement explicite avec des points de suivi réguliers avec les PO sur les premières semaines d'utilisation 
+Avec du recul, j'aurais dû anticiper cette transition en prévoyant une phase d'accompagnement explicite avec des points de suivi réguliers avec les PO sur les premières semaines d'utilisation 

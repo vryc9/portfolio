@@ -2,7 +2,7 @@
 Durant mon alternance, j’ai développé sur l’application web principale de l’entreprise, **DH**, une solution permettant le suivi du patient au sein d’un CHU.
 Dans le cadre d’un lancement en production pour un nouveau CHU, l’établissement souhaitait bénéficier d’un **tableau de bord** pour ses **admissionnistes** sur l’application web. Le but de ce tableau de bord est de permettre de rechercher rapidement un patient, d’accéder directement à certains menus de l’application, de visualiser des alertes remontées par le service informatique et d’accéder à des mémos, c’est-à-dire des rappels que les admissionnistes peuvent créer.
 
-### Obectifs
+### Objectifs
 L’enjeu de cette fonctionnalité était important, car ce tableau de bord faisait partie des attentes du site pour lancer l’application en production. L’objectif était donc de livrer le tableau de bord dans les temps afin qu’il soit prêt pour ce lancement. L’un des principaux risques était de ne pas livrer à temps, ou de livrer une version instable, car j’ai réalisé le développement complet du tableau de bord en autonomie. De plus, étant en alternance avec trois jours de présence par semaine, le délai pouvait être difficile à tenir.
 
 ### Etapes
@@ -25,6 +25,6 @@ Plusieurs acteurs ont gravité autour de ce projet. Il y avait notamment le **Pr
 ### Résultats et lendemain
 Le résultat de ce projet est positif, puisque j’ai terminé le développement du tableau de bord en avance. Cela m’a permis de corriger certains problèmes et de réaliser des phases de tests plus poussées, ce qui a contribué à livrer une version fiable. Pour l’entreprise, le lancement en production s’est très bien déroulé concernant le tableau de bord, car aucun incident n’a été remonté sur cette fonctionnalité.
 
-Concernant la suite du projet, il reste à ce jour une dernière user story qui a été laissée en suspens afin de traiter un sujet support plus prioritaire. À l’avenir, de nouvelles fonctionnalités seront être intégrées, comme la possibilité d’ajouter une date de fin sur les alertes afin qu’elles ne soient plus affichées dans le tableau de bord au-delà d’une certaine échéance.
+Concernant la suite du projet, il reste à ce jour une dernière user story qui a été laissée en suspens afin de traiter un sujet support plus prioritaire. À l’avenir, de nouvelles fonctionnalités seront intégrées, comme la possibilité d’ajouter une date de fin sur les alertes afin qu’elles ne soient plus affichées dans le tableau de bord au-delà d’une certaine échéance.
 
 Pour moi, ce tableau de bord a été une expérience de développement très enrichissante, car j’y ai appris beaucoup de choses, aussi bien sur le plan métier que sur le plan technique, notamment sur **Angular** et **NgRx**, mais aussi sur certaines pratiques de développement que je n’avais pas encore eu l’occasion d’explorer. J’ai pu participer au développement d’une fonctionnalité attendue et importante, ce qui a constitué une très bonne expérience. Cela m’a permis de mieux gérer mes priorités et d’améliorer ma gestion du temps.
