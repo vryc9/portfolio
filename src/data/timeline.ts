@@ -38,7 +38,7 @@ export const timelineEntries: TimelineEntry[] = [
     responsibility: "Étudiant",
     details: [
       "Formation d’ingénieur / expert.",
-      "L'école ESIEA est une école de formation supérieur d'informatique. Elle compte plus de 10 000 diplômés avec 2 200 étudiants ou apprentis ainsi que 800 entreprises partenaires",
+      "L'école ESIEA est une école de formation supérieure d'informatique. Elle compte plus de 10 000 diplômés avec 2 200 étudiants ou apprentis ainsi que 800 entreprises partenaires",
       "Diplôme d'Ingénieur",
     ],
     links: [
